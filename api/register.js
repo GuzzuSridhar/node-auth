@@ -2,6 +2,8 @@ const bcrypt = require("bcrypt");
 const pool = require("../db");
 
 module.exports = async (req, res) => {
+  if (cors(req, res)) return;
+
   // Only POST allowed
   if (req.method !== "POST") {
     return res.status(405).json({
