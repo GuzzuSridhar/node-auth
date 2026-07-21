@@ -1,5 +1,6 @@
 const bcrypt = require("bcrypt");
 const pool = require("../db");
+const cors = require("./cors");
 
 module.exports = async (req, res) => {
   if (cors(req, res)) return;
